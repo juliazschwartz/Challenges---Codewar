@@ -1,44 +1,42 @@
+#Script simulating a cash register, returning the smartest change in BRAZILIAN REAL (R$), in coins and bills.
+# for bills ONLY:
+value = int(input('value: '))
 
-# para CÉDULAS APENAS:
-valor = int(input('valor: '))
+value;
 
-valor;
-
-notas = [200,100,50,20,10,2,1];
+bills = [200,100,50,20,10,2,1]; #these are the existing values for the brazilian bills
 
 while True:
-    for i in notas:
+    for i in bills:
         if valor >= i:
-            print('{} nota de {}'.format(valor//i, i))
-            valor = valor%i
+            print('{} bill of {}'.format(value//i, i))
+            value = value%i
             
-        if valor == 0:
+        if value == 0:
             break
 
 
+#for bills and coins:
 
-
-#para MOEDAS  E CÉDULAS:
-
-valor = float(input('valor: '))
-valor
-notas = [200,100,50,20,10,2,1]
-moedas = [0.50, 0.25, 0.10, 0.05, 0.01]
+value = float(input('value: '))
+value
+notes = [200,100,50,20,10,2,1]  #these are the existing values for the brazilian bills
+coins = [0.50, 0.25, 0.10, 0.05, 0.01] #these are the existing values for the brazilian coins
 
 while True:
-    for i in notas:
-        if valor >= i:
-            print('{} nota de {}'.format(int(valor//i), i))
-            valor = valor%i
-        if valor == 0:     
+    for i in notes:
+        if value >= i:
+            print('{} bill of {}'.format(int(value//i), i))
+            value = value%i
+        if value == 0:     
             break
 
-    for B in moedas:
-            if (valor / B) >= 2 :
+    for B in coins:
+            if (value / B) >= 2 :
             
-                    print('{} MOEDA de {}'.format(round(valor//B), B))
-                    valor = valor%B
+                    print('{} COIN of {}'.format(round(value//B), B))
+                    value = value%B
            
     
-            if valor == 0:     
+            if value == 0:     
                     break
