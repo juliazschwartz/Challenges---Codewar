@@ -8,7 +8,7 @@ bills = [200,100,50,20,10,2,1]; #these are the existing values for the brazilian
 
 while True:
     for i in bills:
-        if valor >= i:
+        if value >= i:
             print('{} bill of {}'.format(value//i, i))
             value = value%i
             
